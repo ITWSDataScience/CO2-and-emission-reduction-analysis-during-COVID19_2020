@@ -9,7 +9,23 @@ class TempData:
         self.longitude = longitude
         self.date = date  # YYYY-MM-DD
         self.temperature = temperature  # Celcius
-
+        
+    def to_list(self):
+        month_day_year = self.date.split('-')
+        if(len(month_day_year) != 3):
+            return
+        month = month_day_year[1]
+        day = month_day_year[2]
+        year = month_day_year[0]
+        returned_list = []
+        returned_list.append(self.city)
+        returned_list.append(self.latitude)
+        returned_list.append(self.longitude)
+        returned_list.append(year)
+        returned_list.append(month)
+        returned_list.append(day)
+        returned_list.append(self.temperature)
+        return returned_list
 
 if __name__ == "__main__":
 
@@ -39,3 +55,15 @@ if __name__ == "__main__":
             # If you want to see all classes printed uncomment below
             # print(tempDataObject.__dict__)
             dataSet.append(tempDataObject)
+
+    
+    categories = ['city', 'latitude', 'longitude', 'year', 'month', 'day', 'temperature']
+    outdata = []
+    for i in range(1,int(len(dataSet))):
+        list_val = dataSet[i].to_list()
+        if (list_val != None):
+            outdata.append(dataSet[i].to_list())
+
+    #print(outdata[4039])
+    f = pandas.DataFrame(outdata, columns = categories)
+    f.to_csv('data/temperature_db.csv',index=False)
