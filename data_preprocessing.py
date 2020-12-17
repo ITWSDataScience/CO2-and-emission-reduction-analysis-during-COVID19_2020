@@ -35,7 +35,7 @@ def co2_mm_mlo():
     # year, month, amount into month, average, 
     
     data = []
-    f = open("co2_mm_mlo.txt", "r")
+    f = open("data/co2_mm_mlo.txt", "r")
     
     x = 0 # a counter
     for row in f.read().split('\n'): # go through all rows
@@ -120,7 +120,7 @@ def co2_weekly():
                     
         
     data = []
-    with open("co2_weekly_mlo.csv", newline='') as file: # open the csv file
+    with open("data/co2_weekly_mlo.csv", newline='') as file: # open the csv file
     	read = csv.reader(file, delimiter=' ', quotechar='|') # read the file
     	x = 0 # a counter
     	for row in read: # go through all rows

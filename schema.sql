@@ -34,6 +34,6 @@ CREATE TABLE ProjectSchema.temperature
    PRIMARY KEY (city,year,month,day)
 );
 
-\copy ProjectSchema.co2_mm_mlo FROM 'C:\Users\Kevin Pan\Desktop\Graduate\DataScience\Final_Project\data\co2_mm_db.csv' WITH (FORMAT CSV, HEADER true, NULL '');
-\copy ProjectSchema.co2_weekly FROM 'C:\Users\Kevin Pan\Desktop\Graduate\DataScience\Final_Project\data\co2_weekly_db.csv'WITH (FORMAT CSV, HEADER true, NULL ''); 
-\copy ProjectSchema.temperature FROM 'C:\Users\Kevin Pan\Desktop\Graduate\DataScience\Final_Project\data\temperature_db.csv'WITH (FORMAT CSV, HEADER true, NULL '');
+\copy ProjectSchema.co2_mm_mlo FROM 'data/co2_mm_db.csv' WITH (FORMAT CSV, HEADER true, NULL '');
+\copy ProjectSchema.co2_weekly FROM 'data/co2_weekly_db.csv' WITH (FORMAT CSV, HEADER true, NULL ''); 
+\copy ProjectSchema.temperature FROM 'data/temperature_db.csv' WITH (FORMAT CSV, HEADER true, NULL '');
